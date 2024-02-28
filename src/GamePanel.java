@@ -161,8 +161,8 @@ public class GamePanel extends JPanel implements Runnable{
         }
 
         public void keyReleased(KeyEvent e){
-            paddle1.keyPressed(e);
-            paddle2.keyPressed(e);
+            paddle1.keyReleased(e);
+            paddle2.keyReleased(e);
         }
     }
 
