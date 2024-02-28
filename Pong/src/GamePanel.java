@@ -50,7 +50,6 @@ public class GamePanel extends JPanel implements Runnable{
         image = createImage(getWidth(), getHeight());
         graphics = image.getGraphics();
         draw(graphics);
-
         g.drawImage(image, 0, 0, this);
     }
 
@@ -59,7 +58,7 @@ public class GamePanel extends JPanel implements Runnable{
         paddle2.draw(g);
         ball.draw(g);
         score.draw(g);
-
+        Toolkit.getDefaultToolkit().sync(); 
     }
 
     public void move() {
@@ -167,7 +166,4 @@ public class GamePanel extends JPanel implements Runnable{
         }
     }
 
-    public void update() {
-
-    }
 }
