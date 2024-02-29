@@ -62,8 +62,10 @@ public class GamePanel extends JPanel implements Runnable{
     }
 
     public void move() {
+        // paddle1.ai(this); // uncomment to enable ai on p1 or p2
+        paddle2.ai(this); // make sure to comment out move() to give back control
         paddle1.move();
-        paddle2.move();
+        //paddle2.move();
         ball.move();
     }
 

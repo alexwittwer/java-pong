@@ -6,6 +6,9 @@ public class Paddle extends Rectangle {
     int id;
     int yVelocity;
     int speed = 6;
+    static final int GAME_WIDTH = 1000;
+    static final int GAME_HEIGHT = (int)(GAME_WIDTH * (0.5555));
+    static final int PADDLE_HEIGHT = 125;
 
     Paddle(int x, int y, int PADDLE_WIDTH, int PADDLE_HEIGHT, int id) {
         super(x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
@@ -62,6 +65,16 @@ public class Paddle extends Rectangle {
 
     public void move() {
         y = y + yVelocity;
+    }
+
+    public void ai(GamePanel gamePanel) {
+        this.speed = 12;
+        if (gamePanel.ball.y > y && y <= GAME_HEIGHT - PADDLE_HEIGHT) {
+            y = y + speed;
+        }
+        if (gamePanel.ball.y < y && y > 0) {
+            y = y - speed;
+        }
     }
 
     public void draw(Graphics g) {
